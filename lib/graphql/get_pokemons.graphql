@@ -1,0 +1,34 @@
+query GetPokemons {
+  pokemon_list: pokemon(
+    where: { pokemonspecy: { evolves_from_species_id: { _is_null: true } } }
+    order_by: { id: asc }
+  ) {
+    id
+    name
+    weight
+    height
+    base_experience
+    status: pokemonstats {
+      base_stat
+      stat {
+        name
+      }
+    }
+    pokemontypes {
+      type {
+        name
+      }
+    }
+    species: pokemonspecy {
+      generation: generation {
+        id
+        name
+      }
+    }
+    sprite: pokemonsprites(limit: 1) {
+      gif: sprites(path: "other.showdown.front_default")
+      front_default: sprites(path: "other.official-artwork.front_default")
+      front_shiny: sprites(path: "other.official-artwork.front_shiny")
+    }
+  }
+}

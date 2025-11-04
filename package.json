@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "introspect": "graphql-codegen introspection --endpoint https://graphql.pokeapi.co/v1beta2 --output schema.json",
+    "gen-schema": "graphql-codegen"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.0.1",
+    "@graphql-codegen/introspection": "^5.0.0"
+  }
+}

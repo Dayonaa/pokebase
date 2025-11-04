@@ -1,0 +1,11 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen|graphql_codegen:
+        options:
+          schema: lib/graphql/schema.json
+          queries_glob: lib/graphql/*.graphql
+          outputDirectory: genarated/
+          scalars:
+            jsonb:
+              type: dynamic

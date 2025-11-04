@@ -1,0 +1,5 @@
+schema: https://graphql.pokeapi.co/v1beta2
+generates:
+  lib/graphql/schema.graphql:
+    plugins:
+      - schema-ast
